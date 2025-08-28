@@ -1,0 +1,268 @@
+.customShadow {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/***user table***/
+.userTable {
+  @apply bg-white;
+}
+.userTable th {
+  @apply border text-base font-medium;
+}
+
+.userTable td {
+  @apply border text-base text-center;
+}
+
+/**scrollbar hidden****/
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes modal {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* Đảm bảo widget luôn nằm bên phải */
+.floating-contact-widget {
+  position: fixed !important;
+  right: 1rem !important;
+  bottom: 1rem !important;
+  z-index: 9999 !important;
+}
+
+/* Responsive positioning */
+@media (min-width: 768px) {
+  .floating-contact-widget {
+    right: 1.5rem !important;
+    bottom: 1.5rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .floating-contact-widget {
+    right: 2rem !important;
+    bottom: 2rem !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .floating-contact-widget {
+    right: 2.5rem !important;
+    bottom: 2.5rem !important;
+  }
+}
+
+/* Đảm bảo popup không bị tràn ra ngoài màn hình */
+@media (max-width: 640px) {
+  .contact-popup {
+    right: 0 !important;
+    min-width: 260px !important;
+    max-width: calc(100vw - 2rem) !important;
+  }
+}
+
+/* Custom animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+.floating-widget-enter {
+  animation: slideInUp 0.3s ease-out;
+}
+
+.pulse-button {
+  animation: pulse 2s infinite;
+}
+
+/* Compact banner styles */
+.compact-banner {
+  position: fixed !important;
+  bottom: 1rem !important;
+  left: 1rem !important;
+  z-index: 9998 !important;
+}
+
+/* Animation cho banner */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.banner-enter {
+  animation: slideInLeft 0.5s ease-out;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .compact-banner {
+    bottom: 1.5rem !important;
+    left: 1.5rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .compact-banner {
+    max-width: 250px !important;
+  }
+
+  .banner-text {
+    font-size: 0.875rem !important;
+  }
+
+  .banner-phone {
+    font-size: 1rem !important;
+  }
+}
+
+/* Hover effects */
+.compact-banner:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease-out;
+}
+
+/* Đảm bảo banner luôn fixed và không bị scroll */
+.fixed-bottom-banner {
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9998 !important;
+}
+
+/* Đảm bảo content không bị che bởi banner */
+body {
+  padding-bottom: 80px; /* Điều chỉnh theo chiều cao banner */
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-bottom: 90px;
+  }
+}
+
+/* Animation cho banner */
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.banner-enter {
+  animation: slideInUp 0.5s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .banner-content {
+    padding: 0.75rem 1rem;
+  }
+
+  .banner-phone {
+    font-size: 1.25rem;
+  }
+}
+
+/* Layout fixes để loại bỏ khoảng trắng và đảm bảo footer không bị che */
+
+/* Reset margin và padding cho body và html */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Đảm bảo root container chiếm full height */
+#root,
+#__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main layout container */
+.main-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content area */
+.main-content {
+  flex: 1;
+  padding-bottom: 6rem; /* Space cho compact banner */
+}
+
+/* Footer styles */
+.footer {
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+/* Loại bỏ khoảng trắng dưới footer */
+.footer:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-content {
+    padding-bottom: 5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .main-content {
+    padding-bottom: 4rem;
+  }
+}
+
+/* Đảm bảo không có scroll ngang */
+body {
+  overflow-x: hidden;
+}
+
+/* Fix cho compact banner không che footer */
+.compact-banner {
+  z-index: 9998;
+}
+
+.footer {
+  z-index: 1;
+  position: relative;
+}
