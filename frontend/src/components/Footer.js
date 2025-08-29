@@ -150,11 +150,10 @@ const Footer = () => {
             <div className="space-y-3 text-base">
               <p>
                 • Hộ Kinh Doanh:{" "}
-                <span className="font-semibold">Phan Huyện Computer</span>
+                <span className="font-semibold">Công ty Phan Huyện</span>
               </p>
               <p>
-                • Người đại diện:{" "}
-                <span className="font-semibold">Nguyễn Thị Hậu</span>
+                • Mã số thuế: <span className="font-semibold">0305571336</span>
               </p>
               {/* <p>
                 • GPKD: <span className="font-semibold">XXXXXXX</span> – Cấp tại
