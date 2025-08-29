@@ -4,7 +4,8 @@ import SummaryApi from "../common/index";
 const baseURL = SummaryApi.forgotPassword.url.split("/api")[0]; // Lấy baseURL từ URL trong SummaryApi
 
 const Axios = axios.create({
-  baseURL: process.env.REACT_APP_SERVER_DOMAIN || "http://localhost:8080/api",
+  baseURL:
+    `${process.env.REACT_APP_BACKEND_URL}/api` || "http://localhost:8080/api",
   withCredentials: true,
 });
 
