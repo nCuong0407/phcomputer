@@ -156,7 +156,7 @@ io.on("connection", (socket) => {
   });
 });
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 10000;
 connectDB().then(() => {
   server.listen(PORT, () => {
     console.log("Kết nối MongoDB thành công");
